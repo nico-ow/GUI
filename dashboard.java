@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+import java.awt.Color;
+import internalPages.*;
 /**
  *
  * @author mendo
@@ -16,7 +17,9 @@ public class dashboard extends javax.swing.JFrame {
     public dashboard() {
         initComponents();
     }
-
+    Color navcolor = new Color(0,153,153);
+    Color headcolor = new Color(0,102,102);
+    Color bodycolor = new Color (153,255,255);
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,16 +34,16 @@ public class dashboard extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         header = new javax.swing.JPanel();
         navbar = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        dashpane = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
+        adminpane = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
+        uspane = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        userpane = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        maindesk = new javax.swing.JDesktopPane();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -49,6 +52,7 @@ public class dashboard extends javax.swing.JFrame {
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 153, 153));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         header.setBackground(new java.awt.Color(0, 102, 102));
@@ -57,53 +61,180 @@ public class dashboard extends javax.swing.JFrame {
         navbar.setBackground(new java.awt.Color(0, 153, 153));
         navbar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel5.setText("DASHBOARD");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
-
-        navbar.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 140, 40));
-
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        dashpane.setBackground(new java.awt.Color(0, 153, 153));
+        dashpane.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        dashpane.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                dashpaneMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                dashpaneMouseExited(evt);
+            }
+        });
+        dashpane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setText("DASHBOARD");
-        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel2MouseEntered(evt);
+            }
+        });
+        dashpane.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        navbar.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 140, 40));
+        navbar.add(dashpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 110, 40));
 
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        adminpane.setBackground(new java.awt.Color(0, 153, 153));
+        adminpane.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        adminpane.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                adminpaneMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                adminpaneMouseExited(evt);
+            }
+        });
+        adminpane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setText("DASHBOARD");
-        jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel3MouseEntered(evt);
+            }
+        });
+        adminpane.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        navbar.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 140, 40));
+        navbar.add(adminpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 110, 40));
 
-        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        uspane.setBackground(new java.awt.Color(0, 153, 153));
+        uspane.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        uspane.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                uspaneMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                uspaneMouseExited(evt);
+            }
+        });
+        uspane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel4.setText("DASHBOARD");
-        jPanel7.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+        jLabel4.setText("ABOUT US");
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel4MouseEntered(evt);
+            }
+        });
+        uspane.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        navbar.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 140, 40));
+        navbar.add(uspane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 110, 40));
 
-        header.add(navbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 137, 410));
+        userpane.setBackground(new java.awt.Color(0, 153, 153));
+        userpane.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        userpane.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                userpaneMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                userpaneMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                userpaneMouseExited(evt);
+            }
+        });
+        userpane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel5.setText("USER PAGE");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel5MouseEntered(evt);
+            }
+        });
+        userpane.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        navbar.add(userpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 110, 40));
+
+        header.add(navbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 380));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(240, 240, 240));
         jLabel1.setText("WELCOME TO PRS");
         header.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
 
-        jDesktopPane1.setBackground(new java.awt.Color(153, 255, 255));
-        jDesktopPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        header.add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 670, 370));
+        maindesk.setBackground(new java.awt.Color(153, 255, 255));
+
+        javax.swing.GroupLayout maindeskLayout = new javax.swing.GroupLayout(maindesk);
+        maindesk.setLayout(maindeskLayout);
+        maindeskLayout.setHorizontalGroup(
+            maindeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 590, Short.MAX_VALUE)
+        );
+        maindeskLayout.setVerticalGroup(
+            maindeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 330, Short.MAX_VALUE)
+        );
+
+        header.add(maindesk, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 590, 330));
 
         getContentPane().add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void dashpaneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashpaneMouseExited
+        dashpane.setBackground(navcolor);
+    }//GEN-LAST:event_dashpaneMouseExited
+
+    private void dashpaneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashpaneMouseEntered
+        dashpane.setBackground(bodycolor);
+    }//GEN-LAST:event_dashpaneMouseEntered
+
+    private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel2MouseEntered
+
+    private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel3MouseEntered
+
+    private void adminpaneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminpaneMouseEntered
+       adminpane.setBackground(bodycolor);
+    }//GEN-LAST:event_adminpaneMouseEntered
+
+    private void adminpaneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminpaneMouseExited
+       adminpane.setBackground(navcolor);
+    }//GEN-LAST:event_adminpaneMouseExited
+
+    private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel4MouseEntered
+
+    private void uspaneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_uspaneMouseEntered
+       uspane.setBackground(bodycolor);
+    }//GEN-LAST:event_uspaneMouseEntered
+
+    private void uspaneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_uspaneMouseExited
+        uspane.setBackground(navcolor);
+    }//GEN-LAST:event_uspaneMouseExited
+
+    private void jLabel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel5MouseEntered
+
+    private void userpaneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userpaneMouseEntered
+        userpane.setBackground(bodycolor);
+    }//GEN-LAST:event_userpaneMouseEntered
+
+    private void userpaneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userpaneMouseExited
+        userpane.setBackground(navcolor);
+    }//GEN-LAST:event_userpaneMouseExited
+
+    private void userpaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userpaneMouseClicked
+        userPage up = new userPage();
+        maindesk.add(up).setVisible(true);
+    }//GEN-LAST:event_userpaneMouseClicked
 
     /**
      * @param args the command line arguments
@@ -141,20 +272,20 @@ public class dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel adminpane;
+    private javax.swing.JPanel dashpane;
     private javax.swing.JPanel header;
-    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JDesktopPane maindesk;
     private javax.swing.JPanel navbar;
+    private javax.swing.JPanel userpane;
+    private javax.swing.JPanel uspane;
     // End of variables declaration//GEN-END:variables
 }
