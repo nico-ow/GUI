@@ -17,7 +17,7 @@ public class userPage extends javax.swing.JInternalFrame {
     public userPage() {
         initComponents();
         
-       this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
+     
       
     }
 
