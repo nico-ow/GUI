@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package internalPages;
-import javax.swing.plaf.basic.BasicinternalFrameUI;
+
 /**
  *
  * @author mendo
@@ -18,7 +18,7 @@ public class userPage extends javax.swing.JInternalFrame {
         initComponents();
         
        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
-       BasicinternalFrameUI bi = (BasicinternalFrameUI)this.getUI();
+      
     }
 
     /**
